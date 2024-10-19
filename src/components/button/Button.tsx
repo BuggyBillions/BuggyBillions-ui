@@ -1,25 +1,25 @@
-'use client'
-
+// Button.tsx
 import React from 'react';
+import styles from './Button.module.css';
 
-// Marking each property as optional with `?`
-export interface ButtonProps {
-  label?: string;
-  value?: string;
-  onClick?: () => void;  // Consider what should happen if onClick is not provided
+interface ButtonProps {
+  icon?: React.ReactNode; // Optional icon component
+  type?: 'button' | 'submit' | 'reset'; // Button type
+  text: string; // Button text
+  onClick?: () => void; // Optional click handler
+  className?: string; // Additional class names for styling
 }
 
-const Button: React.FC<ButtonProps> = ({ label, value, onClick }) => {
-  // Handling optional onClick, provide a default function that does nothing
-  const handleClick = onClick || (() => { console.warn('Button clicked without an onClick handler'); });
-
+const Button: React.FC<ButtonProps> = ({ icon, type = 'button', text, onClick, className }) => {
   return (
-    <>
-      {label && <label>{label}</label>} 
-      <button onClick={handleClick} style={{ padding: '10px 20px', backgroundColor: 'blue', color: 'white' }}>
-        {value}
-      </button>
-    </>
+    <button 
+      type={type} 
+      onClick={onClick} 
+      className={`${styles.button} ${className ? className : ''}`}
+    >
+      {icon && <span className={styles.icon}>{icon}</span>}
+      {text}
+    </button>
   );
 };
 
