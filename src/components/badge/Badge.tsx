@@ -5,19 +5,17 @@ import styles from './Badge.module.css';
 interface BadgeProps {
   icon?: React.ReactNode; // Optional icon component
   text: string; // Button text
-  onClick?: () => void; // Optional click handler
   className?: string; // Additional class names for styling
 }
 
-const Badge: React.FC<BadgeProps> = ({ icon, text, onClick, className }) => {
+const Badge: React.FC<BadgeProps> = ({ icon, text, className }) => {
   return (
-    <button 
-      onClick={onClick} 
-      className={`${styles.button} ${className ? className : ''}`}
+    <div 
+      className={`${styles.div} ${className ? className : ''}`}
     >
       {icon && <span className={styles.icon}>{icon}</span>}
       {text}
-    </button>
+    </div>
   );
 };
 
