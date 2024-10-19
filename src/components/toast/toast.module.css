@@ -85,22 +85,22 @@
 /* Success, Error, Warning, and Info Toasts */
 .toastSuccess {
   background-color: #54baac; /* Success Color */
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .toastError {
   background-color: #ea3c36; /* Error Color */
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .toastWarning {
   background-color: #e5aa2d; /* Warning Color */
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .toastInfo {
   background-color: #1775b8; /* Info Color */
-  color: #fff!important;
+  color: #fff !important;
 }
 
 /* Updated Toast Styles */
