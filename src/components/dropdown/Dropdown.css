@@ -1,0 +1,17 @@
+.custom-button {
+    background-color: blue; /* Custom button color */
+    border-radius: 8px; /* Custom border radius */
+  }
+  
+  .custom-menu {
+    border: 1px solid green; /* Custom border color */
+  }
+  
+  .custom-item {
+    color: black; /* Custom text color */
+  }
+  
+  .custom-item:hover {
+    background-color: lightgray; /* Custom hover effect */
+  }
+  
