@@ -1,6 +1,7 @@
 // Button.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import Button from './Button';
+import React from 'react';
 
 describe('Button Component', () => {
   it('renders button with text', () => {

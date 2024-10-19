@@ -34,9 +34,53 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.myButton{
+  background: red !important;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+
+
+/* Badge Utilities */
+.myBadge{
+  /* Imagine it's User's extra styles */
+  background: white !important;
+  color: green !important;
+}
+.badge-top-right{
+  position: absolute;
+  right: -10px;
+  top: -12px;
+}
+.badge-bottom-right{
+  position: absolute;
+  right: -10px;
+  bottom: -12px;
+}
+.badge-top-left{
+  position: absolute;
+  left: -10px;
+  top: -12px;
+}
+.badge-bottom-left{
+  position: absolute;
+  left: -10px;
+  bottom: -12px;
+}
+.badge-circle{
+  border-radius: 50% !important;
+}
+.badge-ellipse{
+  border-radius: 100px !important;
+}
+
+
+/* Button Utilities */
+.button-reverse{
+  flex-direction: row-reverse !important;
 }

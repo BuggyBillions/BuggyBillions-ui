@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
-  icon?: React.ReactNode; // Optional icon component
-  type?: 'button' | 'submit' | 'reset'; // Button type
-  text: string; // Button text
-  onClick?: () => void; // Optional click handler
-  className?: string; // Additional class names for styling
+  icon?: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset';
+  text: string;
+  onClick?: () => void;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ icon, type = 'button', text, onClick, className }) => {

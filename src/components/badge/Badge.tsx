@@ -3,17 +3,13 @@ import React from 'react';
 import styles from './Badge.module.css';
 
 interface BadgeProps {
-  icon?: React.ReactNode; // Optional icon component
-  text: string; // Button text
-  className?: string; // Additional class names for styling
+  text: string;
+  className?: string;
 }
 
-const Badge: React.FC<BadgeProps> = ({ icon, text, className }) => {
+const Badge: React.FC<BadgeProps> = ({ text, className }) => {
   return (
-    <div 
-      className={`${styles.div} ${className ? className : ''}`}
-    >
-      {icon && <span className={styles.icon}>{icon}</span>}
+    <div className={`${styles.badge} ${className ? className : ''}`}>
       {text}
     </div>
   );
