@@ -16,6 +16,7 @@
   font-family: var(--font-geist-sans);
 }
 
+
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
@@ -33,6 +34,29 @@
   gap: 32px;
   grid-row-start: 2;
 }
+.sub{
+  margin-left: 80px;
+  border: 1px solid black;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 30px;
+  margin-bottom: -1.5vw;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
 
 .main ol {
   font-family: var(--font-geist-mono);
@@ -58,7 +82,7 @@
 
 .ctas {
   display: flex;
-  gap: 16px;
+  gap: 10px;
 }
 
 .ctas a {
@@ -79,13 +103,14 @@
 }
 
 a.primary {
-  background: var(--foreground);
-  color: var(--background);
+  background: #796fab;
+  color: white;
   gap: 8px;
 }
 
 a.secondary {
-  border-color: var(--gray-alpha-200);
+  /* border-color: var(--gray-alpha-200); */
+  background: #796fab3b;
   min-width: 180px;
 }
 
