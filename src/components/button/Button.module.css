@@ -1,7 +1,8 @@
 /* Button.module.css */
 .button {
   display: flex;
-  align-items: center;
+  align-items: center !important;
+  justify-content: center !important;
   flex-direction: row;
   padding: 10px 20px;
   background-color: #007bff;
