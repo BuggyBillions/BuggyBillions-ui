@@ -2,6 +2,7 @@
 import React from 'react';
 import Button from '../../components/button/Button';
 import Badge from '../../components/badge';
+import Loader from '../../components/spinner/Spinner';
 
 const ButtonPage = () => {
 
@@ -14,8 +15,11 @@ const ButtonPage = () => {
         {/* Button */}
         <Button text="A Button" type={"button"} className='myButton' />
         
-        {/* Button */}
+        {/* Button with action */}
         <Button text="I'll alert you" type={"button"} className='myButton' onClick={()=>alert("I kept my word!")} />
+        
+        {/* Button with spinner */}
+        <Button text="I'll add a loader" icon={<Loader size='20px' color='black' speed='10s' />} type={"button"} className='myButton button-reverse' />
 
         {/* Button with icon direction normal */}
         <Button text="Icon, text" icon={<Badge text="+99" className="myBadge" />} type="button" className="myButton" />
