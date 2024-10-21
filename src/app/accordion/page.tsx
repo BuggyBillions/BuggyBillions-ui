@@ -1,41 +1,36 @@
 import React from 'react';
-import BB_Accordion from '../../components/accordion/Accordion'; // Import BB_Accordion from components
-import BB_Button from '../../components/button/Button';
+import BB_Accordion from '../../components/accordion/Accordion';
+import './customStyles.css'; // Custom styles
 
 const App: React.FC = () => {
     const accordionItems = [
         {
-            id: 'collapseOne',
+            id: 'item1',
             title: 'Accordion Item #1',
-            content: (
-                <p>
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.
-                </p>
-            ),
+            content: <p>This is the first item's accordion body.</p>,
+            headerClassName: 'customHeaderClass', // Apply custom header class
+            bodyClassName: 'customBodyClass', // Apply custom body class
         },
         {
-            id: 'collapseTwo',
+            id: 'item2',
             title: 'Accordion Item #2',
-            content: (
-                <p>
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
-                </p>
-            ),
+            content: <p>This is the second item's accordion body.</p>,
+            headerClassName: 'customHeaderClass', // Apply custom header class
+            bodyClassName: 'customBodyClass',
         },
         {
-            id: 'collapseThree',
+            id: 'item3',
             title: 'Accordion Item #3',
-            content: (
-                <><p>
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
-                 </p><BB_Button label="Click Me" value="Click Me" /></>
-            ),
+            content: <p>This is the third item's accordion body.</p>,
+            headerClassName: 'customHeaderClass', // Apply custom header class
+            bodyClassName: 'customBodyClass',
         },
     ];
 
     return (
-        <div style={{ padding: '2rem' }}>
-            <BB_Accordion items={accordionItems} />
+        <div>
+            {/* Pass the accordion items and custom container class */}
+            <BB_Accordion items={accordionItems} className="customAccordionContainerClass" />
         </div>
     );
 };

@@ -1,0 +1,20 @@
+/* customStyles.css */
+.customAccordionContainerClass {
+     border: 2px solid red;
+     background-color: red;
+ }
+ 
+ .customAccordionContainerClass .customHeaderClass { /* Increased specificity */
+     background-color: #796fab;
+     color: white;
+ }
+ .customAccordionContainerClass .customHeaderClass:hover { /* Increased specificity */
+     background-color: #54baac;
+     color: white;
+ }
+ 
+ .customAccordionContainerClass .customBodyClass { /* Increased specificity */
+     background-color: #dddddd;
+     color: #333;
+ }
+ 

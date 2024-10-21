@@ -40,18 +40,10 @@
      font-size: 1rem;
      width: 100%;
      text-align: left;
-     padding: 0.75rem 1.25rem;
+     padding: 0.5rem 0.75rem;
      color: #222;
      cursor: pointer;
      transition: background-color 0.3s ease;
- }
- 
- .accordionButton:hover {
-     background-color: #e9ecef; /* Hover effect */
- }
- 
- .accordionButton.collapsed {
-     background-color: #f1f1f1;
  }
  
  /* Accordion Body */

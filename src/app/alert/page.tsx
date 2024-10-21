@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import BB_Alert from '../../components/alert/Alert';
+import './customToastStyles.css'
 
 const App: React.FC = () => {
     const [alertState, setAlertState] = useState<{ header?: string; content?: string; type?: string; confirmText?: string; onConfirm?: () => void } | null>(null);
@@ -59,6 +60,8 @@ const App: React.FC = () => {
             <BB_Alert
                 header="Hello. This is a test"
                 type="success"
+               onClose={handleClose} // Handle close explicitly
+                className='custom-toast-class'
             />
         </div>
     );
