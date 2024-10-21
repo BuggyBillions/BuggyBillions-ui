@@ -60,7 +60,6 @@ const App: React.FC = () => {
             <BB_Alert
                 header="Hello. This is a test"
                 type="success"
-               onClose={handleClose} // Handle close explicitly
                 className='custom-toast-class'
             />
         </div>
