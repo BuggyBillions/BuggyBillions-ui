@@ -2,12 +2,12 @@ import Loader from "../../components/spinner/Spinner";
 
 const SpinnersPage = () => {
   return (
-    <div>
+    <div style={{ margin: '100px 20px 20px 40px' }}>
       <h3>Spinner Demo</h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <div style={{ margin: '20px', textAlign: 'center' ,display:'flex' ,gap:'60px'}}>
-          <Loader size="54px" color="gray" duration="20s" speed="111s"/>
-          <Loader size="104px" color="#54baac" duration="20s" speed="10s"/>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <Loader size="104px" color="gray" duration="10"  />
+          <Loader size="40px" duration="3" color="green" type="check" />
         </div>
       </div>
     </div>
