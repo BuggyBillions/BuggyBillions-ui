@@ -1,0 +1,112 @@
+/* Tooltip Container */
+.tooltip-container {
+  position: relative; /* Context for the absolute tooltip */
+  display: inline-block; /* Allows the tooltip to be positioned correctly */
+}
+
+/* Tooltip Content */
+.tooltip-content {
+  position: absolute;
+  background-color: #2d2d2d; /* Darker background for contrast */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Slightly larger padding for a better look */
+  border-radius: 6px; /* Smooth rounded corners */
+  white-space: nowrap; /* Prevent wrapping */
+  z-index: 100; /* Ensure it appears above other elements */
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Prevent interaction */
+  transform: translateY(10px) scale(0.95); /* Start with slight shift and scaling */
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s; /* Delay visibility change */
+  font-size: 14px; /* Clear and readable font size */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Deep shadow for elevation */
+  background-image: linear-gradient(135deg, #ff416c, #ff4b2b); /* Gradient background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+
+/* Tooltip Arrow */
+.tooltip-content::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Arrow on Top Tooltip */
+.tooltip-content.top::before {
+  bottom: -8px; /* Position below the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 8px 0 8px; /* Arrow pointing upwards */
+  border-color: #2d2d2d transparent transparent transparent;
+}
+
+/* Arrow on Bottom Tooltip */
+.tooltip-content.bottom::before {
+  top: -8px; /* Position above the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px 8px; /* Arrow pointing downwards */
+  border-color: transparent transparent #2d2d2d transparent;
+}
+
+/* Arrow on Left Tooltip */
+.tooltip-content.left::before {
+  top: 50%;
+  right: -8px; /* Position to the left */
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 8px; /* Arrow pointing left */
+  border-color: transparent transparent transparent #2d2d2d;
+}
+
+/* Arrow on Right Tooltip */
+.tooltip-content.right::before {
+  top: 50%;
+  left: -8px; /* Position to the right */
+  transform: translateY(-50%);
+  border-width: 8px 8px 8px 0; /* Arrow pointing right */
+  border-color: transparent #2d2d2d transparent transparent;
+}
+
+/* Tooltip Positioning */
+.tooltip-content.top {
+  bottom: 100%; /* Position above */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px); /* Slide up */
+}
+
+.tooltip-content.bottom {
+  top: 100%; /* Position below */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); /* Slide down */
+}
+
+.tooltip-content.left {
+  top: 50%;
+  right: 100%; /* Position to the left */
+  transform: translateY(-50%) translateX(-10px); /* Slide left */
+}
+
+.tooltip-content.right {
+  top: 50%;
+  left: 100%; /* Position to the right */
+  transform: translateY(-50%) translateX(10px); /* Slide right */
+}
+
+/* Tooltip Hover State */
+.tooltip-container:hover .tooltip-content {
+  opacity: 1; /* Show tooltip */
+  visibility: visible; /* Make it interactable */
+  transform: translateY(0) scale(1); /* Slide to original position and scale up */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth transition */
+}
+
+/* Tooltip Leave Animation - Fade Out */
+.tooltip-container .tooltip-content {
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s; /* Smooth fade out */
+  visibility: hidden;
+}

@@ -1,17 +1,71 @@
-.custom-button {
-    background-color: blue; /* Custom button color */
-    border-radius: 8px; /* Custom border radius */
-  }
-  
-  .custom-menu {
-    border: 1px solid green; /* Custom border color */
-  }
-  
-  .custom-item {
-    color: black; /* Custom text color */
-  }
-  
-  .custom-item:hover {
-    background-color: lightgray; /* Custom hover effect */
-  }
-  
+/* Center the entire dropdown in a container */
+
+/* Positioning the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button Styles */
+.dropdown-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  position: absolute; /* Keep the dropdown from affecting the button layout */
+  top: 100%; /* Position below the button */
+  left: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-15px); /* Start above the button */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth animation */
+  max-height: 400px;
+  overflow: hidden;
+}
+
+/* Open state of the dropdown */
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Move smoothly into place */
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Link styles */
+.dropdown-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.dropdown-item a:hover {
+  color: #007bff;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './dropdown.module.css'
-import './'
+import './dropdown.css'
+
+
 interface DropdownItem {
   text: string;
   href?: string; // Optional for clickable links
@@ -33,7 +34,8 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className="dropdown">
+    <div className="container">
+      <div className="dropdown">
       <button
         onClick={toggleDropdown}
         className={`dropdown-button ${buttonClassName}`} // Apply user-defined button classes
@@ -46,7 +48,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         )}
       </button>
       {open && (
-        <ul className={`dropdown-menu ${menuClassName}`}>
+        <ul className={`dropdown-menu ${menuClassName} open`}>
           {items.map((item, index) => (
             <li key={index} className={`dropdown-item ${itemClassName}`}>
               {item.href ? (
@@ -61,6 +63,8 @@ const Dropdown: React.FC<DropdownProps> = ({
         </ul>
       )}
     </div>
+    </div>
+    
   );
 };
 

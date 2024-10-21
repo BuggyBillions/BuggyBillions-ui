@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Dropdown from '../../components/dropdown/Dropdown';
-import './dropdown.module.css'
+import './drop.css'
+
 
 const ChevronDownIcon = () => (
   <svg
@@ -24,7 +25,7 @@ const items = [
 
 const MyApp = () => {
   return (
-    <div>
+    <div className='dropdown-container'>
       <Dropdown
         items={items}
         buttonText="Dropdown"
