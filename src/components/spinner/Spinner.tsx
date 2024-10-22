@@ -2,25 +2,41 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Spinner.module.css';
 
-const Loader = ({ size = '54px', color = 'rgb(128, 128, 128)', duration = '3s', type = 'spinner' }) => {
-  const [isVisible, setIsVisible] = useState(true);
+const Loader = ({ 
+  size = '54px', 
+  color = 'rgb(128, 128, 128)', 
+  duration = '3s', 
+  type = 'spinner', 
+  loading,
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
   const [showCheck, setShowCheck] = useState(false);
   const [checkVisible, setCheckVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (type === 'check') {
-        setShowCheck(true); 
-        setCheckVisible(true); 
-        setTimeout(() => {
-          setCheckVisible(false); 
-        }, 3000); 
-      }
-      setIsVisible(false); 
-    }, parseFloat(duration) * 1000); 
+    if (loading) {
+      setIsVisible(true);
+      setShowCheck(false);
+      setCheckVisible(false);
+      
+      const timer = setTimeout(() => {
+        if (type === 'check') {
+          setShowCheck(true);
+          setCheckVisible(true);
+          setTimeout(() => {
+            setCheckVisible(false);
+          }, 3000);
+        }
+        setIsVisible(false);
+      }, parseFloat(duration) * 1000);
 
-    return () => clearTimeout(timer);
-  }, [duration, type]);
+      return () => clearTimeout(timer);
+    } else {
+      setIsVisible(false);
+      setShowCheck(false);
+      setCheckVisible(false);
+    }
+  }, [loading, duration, type]);
 
   if (!isVisible && !checkVisible) return null;
 
@@ -54,7 +70,6 @@ const Loader = ({ size = '54px', color = 'rgb(128, 128, 128)', duration = '3s', 
           )}
         </>
       )}
-
     </div>
   );
 };
