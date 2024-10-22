@@ -30,7 +30,7 @@ const App: React.FC = () => {
     return (
         <div>
             {/* Pass the accordion items and custom container class */}
-            <BB_Accordion items={accordionItems} className="customAccordionContainerClass" />
+            <BB_Accordion items={accordionItems} />
         </div>
     );
 };

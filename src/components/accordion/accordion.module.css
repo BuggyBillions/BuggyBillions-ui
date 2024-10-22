@@ -53,18 +53,35 @@
      background-color: white;
      color: #333;
      border-top: 1px solid rgba(0, 0, 0, 0.1);
-     animation: slideIn 0.4s ease-out forwards;
+     transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+     opacity: 1;
+     max-height: 1000px; /* Adjust max-height based on your content */
+     overflow: hidden;
  }
  
  /* Accordion Collapse */
  .accordionCollapse {
-     display: none;
+     max-height: 0;
+     opacity: 0;
      overflow: hidden;
+     transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
  }
  
  .accordionCollapse.show {
-     display: block;
-     animation: slideIn 0.4s ease-out forwards;
+     max-height: 1000px; /* Adjust based on the content height */
+     opacity: 1;
+ }
+ 
+ /* Open and Closed States for Icon */
+ .open {
+     width: 20px;
+     height: 20px;
+ }
+ 
+ .closed {
+     transform: rotate(45deg);
+     width: 20px;
+     height: 20px;
  }
  
  /* Animations */
