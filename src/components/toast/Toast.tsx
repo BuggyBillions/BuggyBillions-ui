@@ -1,37 +1,32 @@
 'use client';
 
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from './toast.module.css';
 
 interface ToastProps {
      position?: 'bottom-right' | 'top-right' | 'top-left' | 'bottom-left' | 'top-center' | 'bottom-center';
-     header?: string; // Optional header
-     content?: string; // Optional content
-     time?: number; // Time to auto-dismiss in milliseconds
-     timestamp?: Date; // Prop for time, default handled below
+     header?: string;
+     content?: string;
+     time?: number;
+     timestamp?: Date;
      type?: 'success' | 'error' | 'info' | 'warning';
-     onClose?: () => void; // Optional close handler
-     className?: string; // Optional custom class name
+     className?: string;
 }
 
 const Toast: React.FC<ToastProps> = ({
      position = 'bottom-right',
      header,
      content,
-     time = 5000,
      timestamp = new Date(),
-     type = 'info',
-     onClose,
-     className = '' // Default to an empty string if no custom class is provided
+     type = '',
+     className = ''
 }) => {
+     const [isVisible, setIsVisible] = useState(true); // Internal state to control visibility
 
-     useEffect(() => {
-          const timer = setTimeout(() => {
-               if (onClose) onClose(); // Only call onClose if it exists
-          }, time);
-
-          return () => clearTimeout(timer); // Clean up timer on unmount
-     }, [time, onClose]);
+     // Handle the close action for the toast
+     const handleClose = () => {
+          setIsVisible(false); // Hide the toast when the close button is clicked
+     };
 
      const formatTime = useMemo(() => {
           const now = new Date();
@@ -43,30 +38,24 @@ const Toast: React.FC<ToastProps> = ({
           return `${Math.floor(diffInSeconds / 86400)} days ago`;
      }, [timestamp]);
 
-     // Construct the toast class dynamically based on the type and any custom class provided
      const toastClass = `${styles.toast} ${styles[`toast${type.charAt(0).toUpperCase() + type.slice(1)}`]} ${className}`.trim();
      const toastContainer = `${styles.toastContainer} ${styles[position]}`.trim();
 
-     return (
+     return isVisible ? (
           <div className={toastContainer}>
                <div className={toastClass}>
-                    {/* Conditionally render header if provided */}
-                    {header && (
-                         <div className={styles.toastHeader}>
-                              <strong>{header}</strong>
-                              {onClose && ( // Conditionally render close button only if onClose is provided
-                                   <button className={styles.toastClose} onClick={onClose}>&times;</button>
-                              )}
-                         </div>
-                    )}
+                    {/* If header exists, display it, otherwise just show close button */}
+                    {header && <div className={styles.toastHeader}>
+                         <strong>{header}</strong>
+                    </div>}
+                    <button className={styles.toastClose} onClick={handleClose}>&times;</button> {/* Close button */}
 
                     {/* Conditionally render content if provided */}
                     {content && <div className={styles.toastBody}>{content}</div>}
-
                     <div className={styles.toastTimestamp}>{formatTime}</div>
                </div>
           </div>
-     );
+     ) : null;
 };
 
 export default Toast;
