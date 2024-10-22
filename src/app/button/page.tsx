@@ -24,10 +24,10 @@ const ButtonPage = () => {
         <Button text="I'll add a loader" icon={<Loader size='20px' color='black' speed={duration} />} type={"button"} className='myButton button-reverse' onClick={() => setDuration("10")} />
 
         {/* Button with icon direction normal */}
-        <Button text="Icon, text" icon={<Badge text="+99" className="myBadge" />} type="button" className="myButton" />
+        <Button text="Icon, text" icon={<Badge text="+99" className="myBadge newBadge" />} type="button" className="myButton" />
         
         {/* Button with icon direction reverse */}
-        <Button text="Text, Icon" icon={<Badge text="+99" className="myBadge" />} type="button" className="myButton button-reverse" />
+        <Button text="Text, Icon" icon={<Badge text="+99" className="myBadge newBadge" />} type="button" className="myButton button-reverse" />
 
         {/* Button with badge at top-left */}
         <Button text="Add to cart" icon={<Badge text="+99" className="myBadge badge-top-left badge-circle" />} type="button" className="myButton" />

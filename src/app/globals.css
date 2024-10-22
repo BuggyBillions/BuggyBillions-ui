@@ -102,6 +102,9 @@ a {
   border-top-right-radius: 30px !important;
   padding: 5px 10px !important;
 }
+.newBadge{
+  background: #fff !important;
+}
 .badge-top-right{
   position: absolute;
   right: -10px;
