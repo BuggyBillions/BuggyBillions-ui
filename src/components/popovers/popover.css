@@ -55,9 +55,10 @@
 }
 
 /* Popover Position: Above the Button */
+/* Popover Position: Above the Button */
 .popover-content.top {
   bottom: 100%;
-  left: 50%;
+  left: -55%;
   transform: translateX(-50%) translateY(-10px);
   animation: fadeInTop 0.6s ease-out forwards;
 }
@@ -65,14 +66,14 @@
 /* Popover Position: Below the Button */
 .popover-content.bottom {
   top: 100%;
-  left: 50%;
+  left: -50%;
   transform: translateX(-50%) translateY(10px);
   animation: fadeInBottom 0.6s ease-out forwards;
 }
 
 /* Popover Position: Left of the Button */
 .popover-content.left {
-  top: 50%;
+  top: -10%;
   right: 100%;
   transform: translateY(-50%) translateX(-10px);
   animation: fadeInLeft 0.6s ease-out forwards;
@@ -80,11 +81,143 @@
 
 /* Popover Position: Right of the Button */
 .popover-content.right {
-  top: 50%;
+  top: -10%;
   left: 100%;
   transform: translateY(-50%) translateX(10px);
   animation: fadeInRight 0.6s ease-out forwards;
 }
+
+/* Popover Position: Top-Left */
+.popover-content.top-right {
+  bottom: 100%;
+  left: 0;
+  transform: translateX(-10px) translateY(-10px); /* Slight offset */
+  animation: fadeInTopLeft 0.6s ease-out forwards;
+}
+
+/* Popover Position: Top-Right */
+.popover-content.top-left {
+  bottom: 100%;
+  right: 0;
+  transform: translateX(10px) translateY(-10px); /* Slight offset */
+  animation: fadeInTopRight 0.6s ease-out forwards;
+}
+
+/* Popover Position: Bottom-Left */
+.popover-content.bottom-right {
+  top: 100%;
+  left: 0;
+  transform: translateX(-10px) translateY(10px); /* Slight offset */
+  animation: fadeInBottomLeft 0.6s ease-out forwards;
+}
+
+/* Popover Position: Bottom-Right */
+.popover-content.bottom-left {
+  top: 100%;
+  right: 0;
+  transform: translateX(10px) translateY(10px); /* Slight offset */
+  animation: fadeInBottomRight 0.6s ease-out forwards;
+}
+
+/* Keyframes for the Fade-In Animations */
+
+/* Fade in from top */
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Fade in from bottom */
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
+/* Fade in from top-left */
+@keyframes fadeInTopLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Fade in from top-right */
+@keyframes fadeInTopRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Fade in from bottom-left */
+@keyframes fadeInBottomLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Fade in from bottom-right */
+@keyframes fadeInBottomRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+
 
 /* Keyframes for animation effects */
 @keyframes fadeInTop {

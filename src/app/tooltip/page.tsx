@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div style={{ padding: '50px',display: 'flex',alignItems: 'center',justifyContent: 'center' }}>
       <Tooltip content="This is a tooltip! of course" position="bottom">
-        <button className='tool-button'>Hover over me</button>
+        <span className='tool-button'>Hover over me</span>
       </Tooltip>
     </div>
   );

@@ -6,7 +6,7 @@ interface PopoverProps {
   children: React.ReactNode; // Trigger element
   popoverClassName?: string; // Additional class for the popover
   triggerClassName?: string; // Additional class for the trigger
-  position?: 'top' | 'bottom' | 'left' | 'right'; // Position of the popover
+  position?: 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
 const Popover: React.FC<PopoverProps> = ({

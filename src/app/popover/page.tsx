@@ -11,7 +11,7 @@ const App = () => {
 
       <Popover
         content={<div>This is the popover content!</div>}
-        position="left"
+        position="bottom-right"
       >
         Click me 
       </Popover>

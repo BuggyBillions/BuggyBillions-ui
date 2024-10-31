@@ -5,7 +5,9 @@ import './dropdown.css'
 interface DropdownItem {
   text: string;
   href?: string; // Optional for clickable links
-  onClick?: () => void; // Optional for custom click behavior
+  onClick?: () => void; 
+  position?: 'top' | 'bottom' | 'left' | 'right';
+  // Optional for custom click behavior
 }
 
 interface DropdownProps {
@@ -15,7 +17,8 @@ interface DropdownProps {
   menuClassName?: string; // Custom classes for the dropdown menu
   itemClassName?: string; // Custom classes for dropdown items
   icon?: (isOpen: boolean) => React.ReactNode; // Custom icon function based on open state
-  iconClassName?: string; // Custom classes for the icon
+  iconClassName?: string;
+  position?: 'top' | 'bottom' | 'left' | 'right'; // Custom classes for the icon
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -26,6 +29,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   itemClassName,
   icon,
   iconClassName,
+  position = 'top',
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -48,7 +52,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         )}
       </button>
       {open && (
-        <ul className={`dropdown-menu ${menuClassName} open`}>
+        <ul className={`dropdown-menu ${menuClassName} open ${position}`}>
           {items.map((item, index) => (
             <li key={index} className={`dropdown-item ${itemClassName}`}>
               {item.href ? (

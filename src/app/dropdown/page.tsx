@@ -34,6 +34,7 @@ const MyApp = () => {
         itemClassName="custom-item" 
         icon={() => <ChevronDownIcon />} // Use the static icon
         iconClassName="custom-icon" 
+        position='top'
       />
     </div>
   );
