@@ -47,7 +47,46 @@ const Loader = ({
 
   return (
     <div style={{ position: 'relative', width: size, height: size }}>
-      {type === 'spinner' && isVisible && (
+      {type === 'spinner' && (
+        <>
+          <div className={styles.check} style={{ borderTopColor: color }}></div>
+        </>
+      )}
+      {type === 'complete' && (
+        <>
+          <div className={styles.check} style={{ borderColor: color }}></div>
+        </>
+      )}
+      {type === 'line' && (
+        <>
+          <div className={styles.line} style={{ background: color }}></div>
+        </>
+      )}
+      {type === 'check' && (
+        <>
+          <div className={styles.check} style={{ borderTopColor: color}}></div>
+          {showCheck && checkVisible && (
+            <img 
+              src="https://i.pinimg.com/564x/21/3d/c0/213dc0ed0a2e69d1978c75bfbcff903a.jpg" 
+              alt="Check" 
+              style={{ width: size, height: size, position: 'absolute', top: 0, left: 0 }}
+            />
+          )}
+        </>
+      )}
+      {type === 'round' && (
+        <>
+          <div className={styles.check} style={{ borderColor: color}}></div>
+          {showCheck && checkVisible && (
+            <img 
+              src="https://i.pinimg.com/564x/21/3d/c0/213dc0ed0a2e69d1978c75bfbcff903a.jpg" 
+              alt="Check" 
+              style={{ width: size, height: size, position: 'absolute', top: 0, left: 0 }}
+            />
+          )}
+        </>
+      )}
+      {type === 'stripe' && isVisible && (
         <div className={styles.loader} style={loaderStyle}>
           {[...Array(12)].map((_, index) => (
             <div
@@ -57,18 +96,6 @@ const Loader = ({
             />
           ))}
         </div>
-      )}
-      {type === 'check' && (
-        <>
-          <div className={styles.check} style={{ borderTopColor: color }}></div>
-          {showCheck && checkVisible && (
-            <img 
-              src="https://i.pinimg.com/564x/21/3d/c0/213dc0ed0a2e69d1978c75bfbcff903a.jpg" 
-              alt="Check"
-              style={{ width: size, height: size, position: 'absolute', top: 0, left: 0 }}
-            />
-          )}
-        </>
       )}
     </div>
   );
