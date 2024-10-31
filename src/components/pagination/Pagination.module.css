@@ -1,0 +1,25 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .pagination button {
+    margin: 0 5px ;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .pagination button:hover {
+    background-color: darkgray;
+  }
+  .pagination button:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
+  .pagination .active {
+    background-color: blue;
+    color: white;
+  }
+  
