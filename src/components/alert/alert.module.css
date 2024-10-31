@@ -1,0 +1,73 @@
+/* Container for the alert */
+.alert {
+     position: relative;
+     position: fixed;
+     top: 1rem;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 1060;
+     padding: 0.5rem;
+     border-radius: 0.5rem;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     margin-bottom: 1rem;
+     /* Space below alert */
+     max-width: 300px;
+     /* Maximum width */
+     background-color: #aaa;
+     /* Text color */
+     color: #000;
+}
+
+/* Header style */
+.alertHeader {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 0.5rem;
+}
+
+/* Body style */
+.alertBody {
+     font-size: 0.875rem;
+}
+
+/* Close button style */
+.alertClose {
+     margin: 0.2rem;
+     background: transparent;
+     border: none;
+     font-size: 1.25rem;
+     color: #000;
+     cursor: pointer;
+     transition: color 0.3s ease;
+}
+
+/* Hover effect for close button */
+.alertClose:hover {
+     color: #fff;
+}
+
+/* Alert Types */
+.alertSuccess {
+     background-color: #54baac;
+     /* Success Color */
+     color: #fff;
+}
+
+.alertError {
+     background-color: #ea3c36;
+     /* Error Color */
+     color: #fff;
+}
+
+.alertWarning {
+     background-color: #e5aa2d;
+     /* Warning Color */
+     color: #fff;
+}
+
+.alertInfo {
+     background-color: #1775b8;
+     /* Info Color */
+     color: #fff;
+}

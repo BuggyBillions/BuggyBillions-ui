@@ -1,0 +1,149 @@
+/* Container for the toast - positioned based on props */
+.toastContainer {
+     position: fixed;
+     z-index: 1055;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     /* Space between toasts */
+}
+
+.toast {
+     display: flex;
+     flex-direction: column;
+     padding: 0.75rem 1.25rem;
+     background-color: #dddddd;
+     /* Default background */
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     color: #222;
+     border-radius: 0.75rem;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     animation: slideIn 0.4s ease-out forwards, fadeOut 0.4s ease-in 30s forwards;
+     max-width: 350px;
+     overflow: hidden;
+     position: relative;
+}
+
+.toastHeader {
+     font-weight: 500;
+     font-size: 1rem;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.toastBody {
+     font-size: 0.875rem;
+     margin-top: 0.25rem;
+}
+
+.toastClose {
+     position: absolute;
+     background: transparent;
+     border: none;
+     font-size: 1.25rem;
+     font-weight: bold;
+     cursor: pointer !important;
+     color: #323232;
+     transition: color 0.3s ease;
+     top: 0.3rem;
+     right: 0.3rem;
+     opacity: 20%;
+}
+
+
+/* Positioning the toast */
+.bottom-right {
+     bottom: 1rem;
+     right: 1rem;
+}
+
+.top-right {
+     top: 1rem;
+     right: 1rem;
+}
+
+.top-left {
+     top: 1rem;
+     left: 1rem;
+}
+
+.bottom-left {
+     bottom: 1rem;
+     left: 1rem;
+}
+
+.bottom-center {
+     bottom: 1rem;
+     left: 50%;
+     transform: translateX(-50%);
+}
+
+.toast:hover .toastClose {
+     opacity: 100%;
+     color: #333;
+}
+
+.top-center {
+     top: 1rem;
+     left: 50%;
+     transform: translateX(-50%);
+}
+
+/* Success, Error, Warning, and Info Toasts */
+.toastSuccess {
+     background-color: #54baac;
+     /* Success Color */
+     color: #fff !important;
+}
+
+.toastError {
+     background-color: #ea3c36;
+     /* Error Color */
+     color: #fff !important;
+}
+
+.toastWarning {
+     background-color: #e5aa2d;
+     /* Warning Color */
+     color: #fff !important;
+}
+
+.toastInfo {
+     background-color: #1775b8;
+     /* Info Color */
+     color: #fff !important;
+}
+
+/* Updated Toast Styles */
+.toastTimestamp {
+     font-size: 0.75rem;
+     color: #aaa;
+     text-align: right;
+     margin-top: 0.5rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+     from {
+          opacity: 0;
+          transform: translateY(20px);
+          /* Slide in from bottom */
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+@keyframes fadeOut {
+     from {
+          opacity: 1;
+     }
+
+     to {
+          opacity: 0;
+     }
+}

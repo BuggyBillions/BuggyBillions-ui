@@ -1,0 +1,98 @@
+/* Accordion Container */
+.accordion {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     border-radius: 0.75rem;
+     padding: 1rem;
+     background-color: #f9f9f9; /* Light background */
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ }
+ 
+ /* Accordion Item */
+ .accordionItem {
+     display: flex;
+     flex-direction: column;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     border-radius: 0.75rem;
+     overflow: hidden;
+     background-color: #ffffff;
+ }
+ 
+ /* Accordion Header */
+ .accordionHeader {
+     background-color: #dddddd; /* Default background */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.75rem 1.25rem;
+     font-weight: 500;
+     font-size: 1rem;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+ 
+ /* Accordion Button */
+ .accordionButton {
+     background: none;
+     border: none;
+     font-size: 1rem;
+     width: 100%;
+     text-align: left;
+     padding: 0.5rem 0.75rem;
+     color: #222;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+ 
+ /* Accordion Body */
+ .accordionBody {
+     font-size: 0.875rem;
+     padding: 1rem;
+     background-color: white;
+     color: #333;
+     border-top: 1px solid rgba(0, 0, 0, 0.1);
+     transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+     opacity: 1;
+     max-height: 1000px; /* Adjust max-height based on your content */
+     overflow: hidden;
+ }
+ 
+ /* Accordion Collapse */
+ .accordionCollapse {
+     max-height: 0;
+     opacity: 0;
+     overflow: hidden;
+     transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+ }
+ 
+ .accordionCollapse.show {
+     max-height: 1000px; /* Adjust based on the content height */
+     opacity: 1;
+ }
+ 
+ /* Open and Closed States for Icon */
+ .open {
+     width: 20px;
+     height: 20px;
+ }
+ 
+ .closed {
+     transform: rotate(45deg);
+     width: 20px;
+     height: 20px;
+ }
+ 
+ /* Animations */
+ @keyframes slideIn {
+     from {
+         opacity: 0;
+         transform: translateY(20px); /* Slide in from bottom */
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+ 
