@@ -1,0 +1,48 @@
+/* Table.module.css */
+.tableContainer {
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  .th, .td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .th {
+    background-color: #f2f2f2;
+  }
+  
+  /* New styles for the second table */
+  .alternateTableContainer {
+    overflow-x: auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .alternateTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .alternateTh, .alternateTd {
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+    border: 1px solid #bbb;
+  }
+  
+  .alternateTh {
+    background-color: #7ed481;
+    color: white;
+  }
+  
