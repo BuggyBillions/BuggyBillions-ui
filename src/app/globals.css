@@ -97,9 +97,9 @@ a {
 /* Badge Utilities */
 .myBadge{
   /* Imagine it's User's extra styles */
-  background: black !important;
-  color: #80808075 !important;
-  border-top-right-radius: 30px !important;
+  background: blue !important;
+  color: #ffffff !important;
+  border-radius: 5px !important;
   padding: 5px 10px !important;
 }
 .newBadge{
