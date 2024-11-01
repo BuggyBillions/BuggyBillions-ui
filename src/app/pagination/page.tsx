@@ -24,16 +24,7 @@ const PaginationPage = () => {
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <Pagination
-        currentPage={currentPage}
-        totalItems={items.length}
-        itemsPerPage={itemsPerPage}
-        onPageChange={handlePageChange}
-        pageColor="yellow"
-        pageBackgroundColor="lightgray"
-        pageBorderRadius="10px"
-        textColor="white"
-        textBackgroundColor="blue"
+      <Pagination currentPage={currentPage} totalItems={items.length} itemsPerPage={itemsPerPage} onPageChange={handlePageChange} pageColor="black" pageBackgroundColor="red" pageBorderRadius="10px" textColor="white" textBackgroundColor="yellow"
       />
     </div>
   );

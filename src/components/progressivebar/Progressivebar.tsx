@@ -4,7 +4,7 @@ import styles from './Progessivebar.module.css';
 
 const ProgressBar = ({
   width = '100%',
-  height = '20px',
+  height = '10px',
   color = 'blue',
   backgroundColor = 'lightgray',
   borderRadius = '5px',
