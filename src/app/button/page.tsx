@@ -21,7 +21,7 @@ const ButtonPage = () => {
         <Button text="I'll alert you" type={"button"} className='myButton' onClick={()=>alert("I kept my word!")} />
         
         {/* Button with spinner */}
-        <Button text="I'll add a loader" icon={<Loader size='20px' color='black' speed={duration} />} type={"button"} className='myButton button-reverse' onClick={() => setDuration("10")} />
+        <Button text="I'll add a loader" type={"button"} className='myButton button-reverse' onClick={() => setDuration("10")} />
 
         {/* Button with icon direction normal */}
         <Button text="Icon, text" icon={<Badge text="+99" className="myBadge" />} type="button" className="myButton" />

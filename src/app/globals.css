@@ -98,7 +98,7 @@ a {
 .myBadge{
   /* Imagine it's User's extra styles */
   background: blue !important;
-  color: #ffffff !important;
+  color: #ffffff  !important;
   border-radius: 5px !important;
   padding: 5px 10px !important;
 }
