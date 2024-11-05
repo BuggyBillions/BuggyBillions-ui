@@ -138,6 +138,11 @@ a {
 .button-reverse{
   flex-direction: row-reverse !important;
 }
+.button-outline{
+  border: 2px solid !important;
+  color: red !important;
+  background: transparent !important;
+}
 
 
 /* Switch Utilities */
