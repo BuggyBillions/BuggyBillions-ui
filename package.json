@@ -19,7 +19,6 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.1",
     "@storybook/react": "^6.3.0",
-    "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.13",
@@ -38,11 +37,16 @@
     "@storybook/blocks": "^8.3.5",
     "@storybook/nextjs": "^8.3.5",
     "@storybook/test": "^8.3.5",
+    "@testing-library/jest-dom": "^6.6.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint-plugin-storybook": "^0.9.0",
     "storybook": "^8.3.5",
     "typescript": "^5.6.3"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

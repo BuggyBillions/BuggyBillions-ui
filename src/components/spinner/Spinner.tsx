@@ -2,12 +2,22 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Spinner.module.css';
 
-const Loader = ({ 
+
+interface LoaderProps {
+  size?: string;
+  color?: string;
+  duration?: string;
+  type?: 'spinner' | 'complete' | 'line' | 'check' | 'round' | 'stripe';
+  loading: boolean;
+}
+
+
+const Loader: React.FC<LoaderProps> = ({ 
   size = '54px', 
   color = 'rgb(128, 128, 128)', 
   duration = '3s', 
   type = 'spinner', 
-  loading,
+  loading
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showCheck, setShowCheck] = useState(false);

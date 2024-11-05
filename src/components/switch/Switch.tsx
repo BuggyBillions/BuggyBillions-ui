@@ -1,35 +1,34 @@
-'use client'
-
 import React, { useState } from 'react';
-import './SwitchButton.module.css';  
+import styles from './Switch.module.css';
 
-interface SwitchButtonProps {
-  onColor?: string;
-  offColor?: string;
+interface SwitchProps {
+  icon?: React.ReactNode; // Optional icon component
+  onToggle?: (checked: boolean) => void; // Action when toggled
+  beforeToggle?: () => void; // Action before toggling
+  afterToggle?: () => void; // Action after toggling
+  className?: string; // Additional class names for styling
 }
 
-const SwitchButton: React.FC<SwitchButtonProps> = ({
-  onColor = 'green',
-  offColor = 'grey'
-}) => {
-  const [isEnabled, setIsEnabled] = useState(false);
+const Switch: React.FC<SwitchProps> = ({ icon, onToggle, beforeToggle, afterToggle, className }) => {
+  const [checked, setChecked] = useState(false);
 
-  // Function to toggle the isEnabled state
-  const toggleSwitch = () => {
-    setIsEnabled(!isEnabled);
+  const handleToggle = () => {
+    if (beforeToggle) beforeToggle(); // Execute action before toggling
+
+    const newChecked = !checked;
+    setChecked(newChecked);
+
+    if (onToggle) onToggle(newChecked); // Execute action when toggled
+    if (afterToggle) afterToggle(); // Execute action after toggling
   };
 
   return (
-    <div className="switch-container">
-      <div 
-        className={`switch ${isEnabled ? 'switch-on' : 'switch-off'}`}
-        style={{ backgroundColor: isEnabled ? onColor : offColor }}
-        onClick={toggleSwitch}
-      >
-        <div className={`slider ${isEnabled ? 'slider-on' : 'slider-off'}`}></div>
+    <div className={`${styles.switch} ${className ? className : ''}`} onClick={handleToggle}>
+      <div className={`${styles.slider} ${checked ? styles.checked : ''}`}>
+        {icon && <span className={styles.icon}>{icon}</span>}
       </div>
     </div>
   );
 };
 
-export default SwitchButton;
+export default Switch;

@@ -1,1 +1,2 @@
-import SwitchButton from './Switch';
+// index.ts
+export { default } from './Switch';

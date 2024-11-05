@@ -1,0 +1,29 @@
+/* Button.module.css */
+.button {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row;
+  padding: 10px 20px;
+  border: none;
+  position: relative;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.icon {
+  display: inline-flex;
+}
+
+
+  
